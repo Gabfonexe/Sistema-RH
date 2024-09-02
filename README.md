@@ -38,6 +38,53 @@ Utilizei como banco de dados o MySQL e também o H2 como banco de teste.
 
 # Explicando o Projeto:
 
+# Estrutura
+
+## Model 
+```
+- Candidato -> 
+    Estrutura responsável pelo modelo do Candidato. Aqui teremos seus principais atributos e singularidades.
+    Atributos: Nome, CPF, Idade, Experiência, Salário, Atuação e ID. 
+
+
+- Vaga ->
+    Estrutura responsável pelo modelo da Vaga. Aqui teremos seus principais atributos e singularidades. 
+    Atributos: Experiência, Salário, Atuação e ID.
+
+
+O atributo "ID" em ambos os models, é gerado automaticamente através do "@GeneratedValue" do Jakarta.
+```
+
+## Repository 
+
+```
+Estrutura Responsável por ser a Interface ORM do projeto. Aqui eu implementei JPA e atribui novos metódos
+abstratos em cada camada repository (CandidatoRepository e VagaRepository). 
+
+Métodos das Classes:
+
+Candidato ->
+
+    findByNome
+    findByCpf
+    findByExperiencia
+    findByIdade
+    findByAtuacao
+    existsByCpf
+
+Vaga ->
+
+    findByAtuacao
+    findByExperiencia
+    findBySalario
+```
+
+## Service
+
+```
+Nessa estrutura eu costumo realizar a abstração máxima do Java (Interface). Criando uma Interface e posteriormente
+uma classe que implementa essa interface.       
+```
 
 
 
